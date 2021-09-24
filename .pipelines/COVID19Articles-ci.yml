@@ -21,7 +21,7 @@ variables:
 - template: COVID19Articles-variables-template.yml
 - group: devopsforai-aml-vg
 
-pool: solliance-bootcamp-project-agent-pool
+pool: solliance-aml-agent-pool
 
 
 stages:
@@ -76,7 +76,7 @@ stages:
     dependsOn: "Get_Pipeline_ID"
     displayName: "Trigger ML Training Pipeline"
     timeoutInMinutes: 0
-    pool: solliance-bootcamp-project-agent-pool
+    pool: solliance-aml-agent-pool
     variables:
       AMLPIPELINE_ID: $[ dependencies.Get_Pipeline_ID.outputs['getpipelineid.AMLPIPELINEID'] ]
     steps:
